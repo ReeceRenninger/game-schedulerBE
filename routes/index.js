@@ -22,7 +22,7 @@ router.post('/addslot', async (req, res, next) => {
     //grabs information from request body
     const { username, contact, timeSlot } = req.body;
     //creates a new schedule with the request body using schema
-    const schedule = new Schedule({ username, contact, timeSlot }); //added await to remedy thunderclient hang, did not work
+    const schedule = new Schedule({ username, contact, timeSlot }); 
     //saves the schedule to the database
     await schedule.save(); // moved await to new creation of schedule
     res.status(201).json({ message: 'schedule timeslot added successfully' });
