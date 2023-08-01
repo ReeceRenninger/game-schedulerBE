@@ -3,7 +3,7 @@ const router = express.Router();
 const Schedule = require('../models/schedule');
 
 //get all schedules
-router.get('/schedules', async (req, res, next) => {
+router.get('/schedule', async (req, res, next) => {
   try{
     //finds all schedules
     const schedules = await Schedule.find({});
