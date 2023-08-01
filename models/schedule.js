@@ -8,6 +8,6 @@ const scheduleSchema = new mongoose.Schema({
   timeSlot: { type: String, required: true },
 });
 
-const Scheduler = mongoose.model('Schedule', scheduleSchema);
+const Schedule = mongoose.model('Schedule', scheduleSchema);
 
-module.exports = Scheduler;
+module.exports = Schedule;

@@ -4,7 +4,8 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const Scheduler = require('./models/schedule');
+const router = require('./routes/index');
+const db = require('./db/index');
 
 //create app singleton
 const app = express();
