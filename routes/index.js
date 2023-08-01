@@ -17,7 +17,7 @@ router.get('/schedule', async (req, res, next) => {
 });
 
 //post a schedule
-router.post('/scheduleadd', async (req, res, next) => {
+router.post('/addslot', async (req, res, next) => {
   try{
     //grabs information from request body
     const { username, contact, timeSlot } = req.body;
