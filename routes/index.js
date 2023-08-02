@@ -20,9 +20,9 @@ router.get('/schedule', async (req, res, next) => {
 router.post('/addslot', async (req, res, next) => {
   try{
     //grabs information from request body
-    const { username, contact, timeSlot } = req.body;
+    const { username, comments } = req.body;
     //creates a new schedule with the request body using schema
-    const schedule = new Schedule({ username, contact, timeSlot }); 
+    const schedule = new Schedule({ username, comments }); 
     //saves the schedule to the database
     await schedule.save(); // moved await to new creation of schedule
     res.status(201).json({ message: 'schedule timeslot added successfully' });
