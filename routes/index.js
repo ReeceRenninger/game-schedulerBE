@@ -22,6 +22,7 @@ router.post('/create-event', async (req, res, next) => {
     const newEvent = new Event({
       title: req.body.title,
       host: req.body.host,
+      day: req.body.day,
       startTime: req.body.startTime,
       endTime: req.body.endTime,
       description: req.body.description,
@@ -36,7 +37,7 @@ router.post('/create-event', async (req, res, next) => {
 });
 
 //user joining an event
-router.post('/join-event/:eventId', async (req, res, next) => {
+router.put('/join-event/:eventId', async (req, res, next) => {
   try{
     const eventId = req.params.eventId;
     const { username, comments } = req.body;
@@ -49,7 +50,7 @@ router.post('/join-event/:eventId', async (req, res, next) => {
     event.participants.push({username, comments});
     await event.save();
 
-    res.status(201).json({message: 'event joined successfully'});
+    res.status(202).json({message: 'event joined successfully'});
   } catch (error){
     console.error('Error joining event: ', error);
     res.status(500).json({error: 'failed to update event'});
