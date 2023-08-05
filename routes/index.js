@@ -29,7 +29,7 @@ router.post('/create-event', async (req, res, next) => {
       description: req.body.description,
       participants: [], //empty array to start since users will join in later through another endpoint
     });
-    console.log(newEvent); // tseting to 
+    console.log(newEvent);  
     await newEvent.save();
     res.status(201).json({ message: 'Event created successfully' });
   } catch (error) {
