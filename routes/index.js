@@ -42,6 +42,7 @@ router.post('/create-event', async (req, res, next) => {
 router.put('/join-event/:eventId', async (req, res, next) => {
   try{
     const eventId = req.params.eventId;
+    console.log(eventId);
     const { username, comments } = req.body;
 
     const event = await Event.findById(eventId);
