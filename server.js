@@ -9,7 +9,7 @@ const db = require('./db/index'); //must be required in to app level to run
 
 //create app singleton
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 3002;
 
 // Middleware
 app.use(bodyParser.json());
