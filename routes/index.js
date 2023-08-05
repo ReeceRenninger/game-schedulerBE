@@ -9,6 +9,7 @@ router.get('/events', async (req, res, next) => {
     //finds all events
     const events = await Event.find({});
     //returns all events
+    console.log(events);
     res.json(events);
     console.log('all events were retrieved');
   } catch (error){
