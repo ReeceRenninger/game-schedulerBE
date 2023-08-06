@@ -2,14 +2,13 @@ const express = require('express');
 const router = express.Router();
 const Event = require('../models/events');
 
-
 //get all events
 router.get('/events', async (req, res, next) => {
   try{
     //finds all events
     const events = await Event.find({});
     //returns all events
-    console.log(events);
+    // console.log('GET REQUEST REACHED LINE 12');
     res.json(events);
     console.log('all events were retrieved');
   } catch (error){
