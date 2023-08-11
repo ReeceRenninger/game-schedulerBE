@@ -2,14 +2,13 @@ const express = require('express');
 const router = express.Router();
 const Event = require('../models/events');
 
-
 //get all events
 router.get('/events', async (req, res, next) => {
   try{
     //finds all events
     const events = await Event.find({});
     //returns all events
-    console.log(events);
+    // console.log('GET REQUEST REACHED LINE 12');
     res.json(events);
     console.log('all events were retrieved');
   } catch (error){
@@ -29,7 +28,7 @@ router.post('/create-event', async (req, res, next) => {
       description: req.body.description,
       participants: [], //empty array to start since users will join in later through another endpoint
     });
-    console.log(newEvent); // tseting to 
+    console.log(newEvent);  
     await newEvent.save();
     res.status(201).json({ message: 'Event created successfully' });
   } catch (error) {

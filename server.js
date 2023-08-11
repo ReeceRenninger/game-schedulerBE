@@ -18,6 +18,9 @@ app.use(cors());
 //routes
 app.use('/api', router);
 
+// app.use('/', (req, res, next) => {
+//   console.log('I AM HOME');
+// });
 //start
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
