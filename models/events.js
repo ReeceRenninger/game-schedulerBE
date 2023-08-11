@@ -12,7 +12,7 @@ const eventSchema = new mongoose.Schema({
   description: { type: String },
   participants: [
     {
-      username: { type: String, unique: true, required: true },
+      username: { type: String, required: true },
       comments: { type: String },
     },
   ],
