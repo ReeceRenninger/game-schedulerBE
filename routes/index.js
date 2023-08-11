@@ -20,6 +20,7 @@ router.get('/events', async (req, res, next) => {
 router.post('/create-event', async (req, res, next) => {
   try {
     const newEvent = new Event({
+      id: req.body.id,
       title: req.body.title,
       host: req.body.host,
       day: req.body.day,
