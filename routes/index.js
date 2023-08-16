@@ -20,7 +20,7 @@ router.get('/events', async (req, res, next) => {
 router.post('/create-event', async (req, res, next) => {
   try {
     const newEvent = new Event({
-      _id: req.body.id,
+      _id: req.body._id,
       title: req.body.title,
       host: req.body.host,
       day: req.body.day,
@@ -42,10 +42,11 @@ router.post('/create-event', async (req, res, next) => {
 router.put('/join-event/:eventId', async (req, res, next) => {
   try{
     const eventId = req.params.eventId;
-    console.log(eventId);
+    console.log('-----eventId-----', eventId);
     const { username, comments } = req.body;
 
     const event = await Event.findById(eventId);
+    console.log('-----event-----', event);
     if(!event){
       res.status(404).json({error: 'event not found'});
     }
