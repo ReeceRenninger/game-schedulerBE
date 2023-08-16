@@ -16,7 +16,7 @@ router.get('/events', async (req, res, next) => {
   }
 });
 
-//host creating an event
+//host creating an event, this will be a post request
 router.post('/create-event', async (req, res, next) => {
   try {
     const newEvent = new Event({
